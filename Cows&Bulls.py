@@ -2,13 +2,16 @@ import random
 
 print("Welcome to the Cows and Bulls Game!")
 
+comp_num = "".join(str(i) for i in random.sample(range(0, 10), k=4))
 
+'''
 comp_num = ""
 while len(comp_num) <= 3:
     x = random.randint(0, 9)
     y = str(x)
     if y not in comp_num:
         comp_num += y
+'''
 #print(comp_num)
 
 def checking(user_guess, comp_num):
@@ -61,7 +64,7 @@ def checking(user_guess, comp_num):
                     if bulls == 1:
                         print("You have", cows, "Cows and", bulls, "Bull.")
                     elif bulls == 4:
-                        print("You have", cows, "Cows and", bulls, "Bulls.\nCongratulation!\nYOU WIN!\n\nYou have made", attempts, "attempts")
+                        print("You have", bulls, "Bulls.\nCongratulation!\nYOU WIN!\n\nYou have made", attempts, "attempts")
                         break
                     else:
                         print("You have", cows, "Cows and", bulls, "Bulls.")
