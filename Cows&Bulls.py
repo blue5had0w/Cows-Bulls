@@ -12,14 +12,11 @@ def checking(user_guess, comp_num, user):
     while True:
         if user_guess.lower() == "exit":
           if attempts == 2:
-            print("\nLOOSER !!! Ha - Ha \n\n{}, you have made {} attempt.".format(user, attempts - 1))
-            break
+              return "\nLOOSER !!! Ha - Ha \n\n{}, you have made {} attempt.".format(user, attempts - 1)
           elif attempts == 1:
-              print("\nWoow!!! {}, you are such a quiter. SHAME! You have made {} attempts.".format(user, attempts - 1))
-              break
+              return "\nWoow!!! {}, you are such a quiter. SHAME! You have made {} attempts.".format(user, attempts - 1)
           else:
-              print("\nLOOSER !!! Ha - Ha \n\nYou have made", attempts - 1, "attempts.")
-              break
+              return "\nLOOSER !!! Ha - Ha \n\nYou have made {} attempts.".format(attempts)
         else:
             bulls = 0
             cows = 0
@@ -58,7 +55,7 @@ def checking(user_guess, comp_num, user):
                     else:
                         print("You have {} Cow and {} Bulls".format(cows, bulls))
                 elif cows > 1:
-                    if bulls > 1:
+                    if bulls != 1:
                         print("You have {} Cows and {} Bulls.".format(cows, bulls))
                     else:
                         print("You have {} Cows and {} Bull.".format(cows, bulls))
@@ -66,8 +63,7 @@ def checking(user_guess, comp_num, user):
                     if bulls == 1:
                         print("You have 0 Cows and 1 Bull.")
                     elif bulls == 4:
-                        print("You have 4 Bulls!\nCongratulation!\nYOU WIN!\n\nYou have made {} attempts".format(attempts))
-                        break
+                        return "You have 4 Bulls!\nCongratulation!\nYOU WIN, {}!\n\nYou have made {} attempts.".format(user, attempts)
                     else:
                         print("You have 0 Cows and {} Bulls.".format(bulls))
                 attempts += 1
